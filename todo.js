@@ -14,9 +14,9 @@ function handleDelete(e) {
   var targetId = e.target;
   var li = targetId.parentNode;
   ulTodo.removeChild(li)
-
-  const cleanTodo = todoArr.filter(function(e) {
-    return e.id !== Number(targetId);
+  const cleanTodo = todoArr.filter(function(ele) {
+    console.log(e.target.parentNode.id)
+    return ele.id !== Number(li.id);
   })
   todoArr = cleanTodo;
   saveTodo()
