@@ -4,27 +4,21 @@ const listOfTodo = todoForm.querySelector('input')
 const ulTodo = document.querySelector('.js-todolist')
 
 const todoList_LS = "list";
-const todoArr = [];
+var todoArr = [];
 
 function saveTodo() {
   localStorage.setItem(todoList_LS, JSON.stringify(todoArr))
 }
 
 function handleDelete(e) {
-  e.preventDefault()
-  var targetId = e.target.parentElement.id
-  var liArr = Array.from(document.querySelectorAll('li'))
-  for (let i = 0; i < liArr.length; i++) {
-    if (Number(targetId) === i+1) {
-      var ele = document.getElementById(i+1);
-      ele.remove()
-    }
-  }
-  for (let i = 0; i < todoArr.length; i++) {
-    if(Number(targetId) === todoArr[i].id) {
-      todoArr.splice(i,1)
-    }
-  }
+  var targetId = e.target;
+  var li = targetId.parentNode;
+  ulTodo.removeChild(li)
+
+  const cleanTodo = todoArr.filter(function(e) {
+    return e.id !== Number(targetId);
+  })
+  todoArr = cleanTodo;
   saveTodo()
 }
 
