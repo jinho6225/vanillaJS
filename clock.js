@@ -3,7 +3,6 @@ const clockContainer = document.querySelector('.js-clock'),
 
 const date = new Date()
 
-
 function getTime() {
   const date = new Date()
   const hr = date.getHours()
@@ -11,7 +10,6 @@ function getTime() {
   const sec = date.getSeconds()
   clock.innerHTML = `${hr < 10 ? `0${hr}` : hr}:${min < 10 ? `0${min}` : min}:${sec < 10 ? `0${sec}` : sec}`
 }
-
 
 function init() {
   setInterval(getTime, 1000)
