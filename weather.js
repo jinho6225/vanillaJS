@@ -3,15 +3,17 @@ const COORDS = "coords"
 const weatherContainer = document.querySelector('.js-weather')
 const h5 = weatherContainer.querySelector('h5')
 
+
 function getWeather(lati, longi) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${longi}&appid=${API_KEYS}&units=imperial
   `).then(function(response) {
     return response.json()
   })
   .then(function(json) {
-    var name = json.name;
+    var lat = json.coord.lat;
+    var lon = json.coord.lon;
     var temp = json.main.temp
-    h5.innerHTML = `Location: ${name}, Temperature: ${temp} &#8457;`
+    h5.innerHTML = `latitude: ${lat}, longitude:${lon}, Temperature: ${temp} &#8457;`
   })
 }
 
@@ -36,7 +38,6 @@ function handleGeoError() {
 
 function askForCoords() {
   navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError)
-
 }
 
 function loadCoords() {
@@ -47,7 +48,6 @@ function loadCoords() {
     const parsedCoords = JSON.parse(loadedCoords)
     getWeather(parsedCoords.latitude, parsedCoords.longitude)
   }
-
 }
 
 function init() {
