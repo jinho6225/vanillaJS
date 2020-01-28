@@ -10,7 +10,6 @@ function getWeather(lati, longi) {
     return response.json()
   })
   .then(function(json) {
-    console.log(json)
     var city = json.name
     var temp = json.main.temp
     h5.innerHTML = `Location: ${city}, Temperature: ${temp} &#8457;`
