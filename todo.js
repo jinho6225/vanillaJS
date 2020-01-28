@@ -22,8 +22,9 @@ function handleDelete(e) {
 }
 
 function printTodo(text) {
-  var bTn = document.createElement('span')
+
   var li = document.createElement('li')
+  var bTn = document.createElement('span')
   bTn.innerText  = '❌ '
   bTn.addEventListener('click', handleDelete)
   var span = document.createElement('span')

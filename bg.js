@@ -10,7 +10,6 @@ function getRandomImg() {
     var bg = json.urls.regular
     body.setAttribute("style", `background-image: url("${bg}")`)
   })
-
 }
 
 function loadImage() {

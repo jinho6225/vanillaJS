@@ -33,11 +33,15 @@ h3{
 
 }
 ul {
-  display: flex;
-  justify-content: center;
+  display: block;
+  text-align: center;
+}
+li {
+  display: list-item;
 }
 
 li, form, span{
+  list-style-position: inside;
   text-align: center;
   color: white;
   font-size: 2.5rem;
