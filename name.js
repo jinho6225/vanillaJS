@@ -12,6 +12,8 @@ function refresh() {
   greeting.classList.remove(SHOWING_CN)
   form.classList.add(SHOWING_CN)
   refreshBtn.classList.add(SHOWING_CN)
+  localStorage.removeItem(COORDS)
+  h5.innerHTML = ""
 }
 
 function paintName(text) {
