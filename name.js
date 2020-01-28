@@ -7,12 +7,12 @@ const nameContainer = document.querySelector('.js-name'),
 const user_LS = "currentUser",
   SHOWING_CN = "showing"
 
-// function refresh() {
-//   localStorage.removeItem(user_LS)
-//   greeting.classList.remove(SHOWING_CN)
-//   form.classList.add(SHOWING_CN)
-//   refreshBtn.classList.add(SHOWING_CN)
-// }
+function refresh() {
+  localStorage.removeItem(user_LS)
+  greeting.classList.remove(SHOWING_CN)
+  form.classList.add(SHOWING_CN)
+  refreshBtn.classList.add(SHOWING_CN)
+}
 
 function paintName(text) {
   form.classList.remove(SHOWING_CN)
