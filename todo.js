@@ -22,15 +22,15 @@ function handleDelete(e) {
 }
 
 function printTodo(text) {
-  var li = document.createElement('li')
   var bTn = document.createElement('span')
-  bTn.innerText  = ' ❌'
+  var li = document.createElement('li')
+  bTn.innerText  = '❌ '
   bTn.addEventListener('click', handleDelete)
   var span = document.createElement('span')
   var newId = todoArr.length + 1
   span.innerText = text;
-  li.appendChild(span)
   li.appendChild(bTn)
+  li.appendChild(span)
   li.setAttribute('id', newId)
   ulTodo.appendChild(li)
   let todoObj = {
