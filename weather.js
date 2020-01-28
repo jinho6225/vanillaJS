@@ -10,10 +10,10 @@ function getWeather(lati, longi) {
     return response.json()
   })
   .then(function(json) {
-    var lat = json.coord.lat;
-    var lon = json.coord.lon;
+    console.log(json)
+    var city = json.name
     var temp = json.main.temp
-    h5.innerHTML = `latitude: ${lat}, longitude:${lon}, Temperature: ${temp} &#8457;`
+    h5.innerHTML = `Location: ${city}, Temperature: ${temp} &#8457;`
   })
 }
 
@@ -21,23 +21,34 @@ function saveCoords(coordsObj) {
   localStorage.setItem(COORDS, JSON.stringify(coordsObj))
 }
 
-function handleGeoSuccess(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let coordsObj = {
-    latitude: latitude,
-    longitude: longitude
-  }
-  saveCoords(coordsObj)
-  getWeather(coordsObj.latitude, coordsObj.longitude)
-}
+// function handleGeoSuccess(position) {
+//   let latitude = position.coords.latitude;
+//   let longitude = position.coords.longitude;
+//   let coordsObj = {
+//     latitude: latitude,
+//     longitude: longitude
+//   }
+//   saveCoords(coordsObj)
+//   getWeather(coordsObj.latitude, coordsObj.longitude)
+// }
 
-function handleGeoError() {
-  console.log('cant access geo info')
-}
+// function handleGeoError() {
+//   console.log('cant access geo info')
+// }
 
 function askForCoords() {
-  navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError)
+  fetch(`http://ip-api.com/json`).then(function(response) {
+    return response.json()
+  }).then(function(json) {
+    var latitude = json.lat;
+    var longitude = json.lon;
+    let coordsObj = {
+    latitude: latitude,
+    longitude: longitude,
+    }
+    saveCoords(coordsObj)
+    getWeather(coordsObj.latitude, coordsObj.longitude)
+  })
 }
 
 function loadCoords() {
