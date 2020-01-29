@@ -18,20 +18,28 @@ body {
 h1{
   text-align: center;
   color: white;
-  font-size: 7rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8rem;
   margin: 5% auto
+}
+.weatherInfo{
+  font-size: 1rem;
+  margin: 0;
+  width: 100%;
 }
 h5{
   text-align: center;
   color: white;
   font-size: 2.5rem;
   margin: 0 auto;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
 }
 h3{
   text-align: center;
   color: white;
-  font-size: 3rem;
-
+  font-size: 4rem;
 }
 ul {
   display: block;
@@ -45,8 +53,33 @@ li, form, span{
   list-style-position: inside;
   text-align: center;
   color: white;
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 .refresh {
+  font-size: 1rem;
+  margin: 0 1%;
+}
+.headInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoInput {
+  border-bottom: 3px solid gray;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  width: 20%;
+  height: 25px;
+  background: rgba(0, 0, 0, 0); /* Black background with 0.5 opacity */
+  color: white;
+  padding: 1%;
+  font-size: 1.3rem;
+}
+::placeholder {
   text-align: center;
+  font-size: 1.3rem;
+}
+.btn {
+  font-size: 1.4rem;
 }

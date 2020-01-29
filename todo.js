@@ -3,12 +3,14 @@ const todoForm = jsTodo.querySelector('form')
 const listOfTodo = todoForm.querySelector('input')
 const ulTodo = document.querySelector('.js-todolist')
 
+
 const todoList_LS = "list";
 var todoArr = [];
 
 function saveTodo() {
   localStorage.setItem(todoList_LS, JSON.stringify(todoArr))
 }
+
 
 function handleDelete(e) {
   var targetId = e.target;
@@ -22,9 +24,14 @@ function handleDelete(e) {
 }
 
 function printTodo(text) {
-
   var li = document.createElement('li')
   var bTn = document.createElement('span')
+  bTn.classList.add('btn')
+
+  // var h5 = document.createElement('h5')
+  // h5.textContent = "What is your plan today?"
+  // jsTodo.prepend(h5)
+
   bTn.innerText  = '❌ '
   bTn.addEventListener('click', handleDelete)
   var span = document.createElement('span')
@@ -49,7 +56,7 @@ function something(obj) {
 function askPlan() {
   var h5 = document.createElement('h5')
   h5.textContent = "What is your plan today?"
-  todoForm.prepend(h5)
+  jsTodo.prepend(h5)
 }
 
 function handleSubmit(e) {
@@ -65,6 +72,9 @@ function loadTodo() {
     askPlan()
   } else {
     let parseTodoList = JSON.parse(todoList)
+    var h5 = document.createElement('h5')
+    h5.textContent = "What is your plan today?"
+    jsTodo.prepend(h5)
     for (let i = 0; i < parseTodoList.length; i++) {
       something(parseTodoList[i])
     }

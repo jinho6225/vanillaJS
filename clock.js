@@ -9,6 +9,7 @@ function getTime() {
   const min = date.getMinutes()
   const sec = date.getSeconds()
   clock.innerHTML = `${hr < 10 ? `0${hr}` : hr}:${min < 10 ? `0${min}` : min}:${sec < 10 ? `0${sec}` : sec}`
+  return date
 }
 
 function init() {

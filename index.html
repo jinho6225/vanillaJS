@@ -8,13 +8,19 @@
   <title>vanilla javascript</title>
 </head>
 <body>
+    <div class="headInfo">
+      <div class="refresh">
+        <button onclick="refresh()">refresh</button>
+      </div>
+      <div class="js-weather">
+        <h5 class="weatherInfo"></h5>
+      </div>
+    </div>
 
   <div class="js-clock">
     <h1>00:00</h1>
   </div>
-  <div class="js-weather">
-    <h5></h5>
-  </div>
+
   <div class="js-name">
     <form class="name-form form">
       <input type="text"  placeholder="Type your name"/>
@@ -22,13 +28,10 @@
       <h3 class="js-greetings greetings"></h3>
   </div>
 
-  <div class="refresh">
-    <button onclick="refresh()">refresh</button>
-  </div>
 
   <div class="js-todo">
     <form class="todo-form">
-      <input type="text" placeholder="Write down todo list">
+      <input type="text" placeholder="Write down todo list" class="todoInput">
     </form>
       <ul class="js-todolist">
 
