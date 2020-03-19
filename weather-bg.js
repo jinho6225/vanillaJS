@@ -31,7 +31,10 @@ function getWeatherNImg(lati, longi) {
     .then(data => {
       var randomNum = Math.floor(Math.random() * 10);
       var bg = data[randomNum].urls.full;
-      body.setAttribute('style', `background-image: url("${bg}")`);
+      body.setAttribute(
+        'style',
+        `background: url("${bg}"); background-repeat: no-repeat; background-size: cover`
+      );
     });
 }
 
