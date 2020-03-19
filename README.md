@@ -8,6 +8,8 @@
 1.  User can delete Todo List
 
 ### preview
+- based on time, it will greet morning, afternoon, evening
+- based on weather condition, background image will be decided
 
 <p align="middle">
   <img src="todoClockWeather.gif">
