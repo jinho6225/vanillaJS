@@ -33,7 +33,10 @@ function getWeatherNImg(lati, longi) {
       var bg = data[randomNum].urls.full;
       body.setAttribute(
         'style',
-        `background: url("${bg}"); background-repeat: no-repeat; background-size: cover`
+        `background: url("${bg}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;`
       );
     });
 }
